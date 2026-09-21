@@ -1,0 +1,30 @@
+#!/usr/bin/env sh
+
+echo 'Ìæ® Checking code formatting...'
+pnpm format:check ||
+(
+    echo '‚ùå Prettier check failed!'
+    echo 'Ì≤° Run: pnpm format'
+    echo ''
+    exit 1
+)
+
+echo 'Ì¥ç Running ESLint...'
+pnpm lint ||
+(
+    echo '‚ùå ESLint check failed!'
+    echo 'ÔøΩÔøΩ Fix the errors above or run: pnpm lint:fix'
+    echo ''
+    exit 1
+)
+
+echo 'Ì¥é Checking TypeScript types...'
+pnpm type-check ||
+(
+    echo '‚ùå TypeScript check failed!'
+    echo 'Ì≤° Fix the type errors above'
+    echo ''
+    exit 1
+)
+
+echo '‚úÖ All pre-commit checks passed!'
