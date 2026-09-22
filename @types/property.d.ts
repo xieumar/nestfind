@@ -14,12 +14,15 @@ export type PropertyType =
   | "other";
 
 export interface RawHousingRecord {
-  id: string | number;
+  id?: string | number;
+  pid?: string | number;
   title?: string;
   area?: string;
   location?: string;
+  neighbourhood?: string;
   address?: string;
-  price: number | string;
+  price?: number | string;
+  price_ngn?: number | string;
   currency?: string;
   listing_type?: string;
   listingType?: string;
@@ -35,6 +38,8 @@ export interface RawHousingRecord {
   newlyBuilt?: boolean | number | string | null;
   furnished?: boolean | number | string | null;
   description?: string;
+  date_added?: string;
+  last_updated?: string;
   url?: string;
   source_url?: string;
   sourceUrl?: string;
@@ -44,6 +49,7 @@ export interface RawHousingRecord {
 
 export interface PropertyProvenance {
   source: string;
+  publisher?: string;
   license: string;
   collectionDate?: string;
   author?: string;
