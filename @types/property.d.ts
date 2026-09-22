@@ -36,6 +36,8 @@ export interface RawHousingRecord {
   furnished?: boolean | number | string | null;
   description?: string;
   url?: string;
+  source_url?: string;
+  sourceUrl?: string;
   source?: string;
   [key: string]: unknown;
 }
